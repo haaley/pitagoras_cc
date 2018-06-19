@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Repositories\PostRepository;
 use App\Post;
+use App\Docente;
 use Illuminate\Http\Request;
 use XblogConfig;
 
@@ -111,7 +112,7 @@ class HomeController extends Controller
 
     public function docente()
     {
-        $docentes = docentesFake();
+        $docentes = Docente::all();
         return view('site.docente.index', compact('docentes'));
     }
 

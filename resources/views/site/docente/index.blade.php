@@ -22,7 +22,7 @@
                                 <!--image-->
                                 <div class="nicdark_section nicdark_position_relative">
 
-                                    <img alt="" class="nicdark_section" src="{{asset($docente->img)}}">
+                                    <img alt="" class="nicdark_section" src="{{asset($docente->avatar)}}">
 
                                     <div class="nicdark_bg_greydark_alpha_gradient nicdark_position_absolute nicdark_left_0 nicdark_height_100_percentage nicdark_width_100_percentage nicdark_padding_20 nicdark_box_sizing_border_box">
 
@@ -43,11 +43,11 @@
 
                                 <div class="nicdark_section nicdark_padding_20 nicdark_box_sizing_border_box">
 
-                                    <h2><strong>{{ $docente->nome }}</strong></h2>
+                                    <h2><strong>{{ $docente->name }}</strong></h2>
                                     <div class="nicdark_section nicdark_height_10"></div>
                                     <h6 class="nicdark_text_transform_uppercase nicdark_color_grey">Professor</h6>
                                     <div class="nicdark_section nicdark_height_20"></div>
-                                    <p>{{ $docente->descricao }}</p>
+                                    <p>{{ $docente->description }}</p>
                                     <div class="nicdark_section nicdark_height_20"></div>
                                     <a class="nicdark_display_inline_block nicdark_color_white nicdark_bg_blue nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13" href="{{route('docente.single', ['slug' => $docente->url])}}">Ver Perfil</a>
 
