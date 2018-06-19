@@ -32,6 +32,7 @@ Route::get('/tags', ['uses' => 'AdminController@tags', 'as' => 'admin.tags']);
 Route::get('/users', ['uses' => 'AdminController@users', 'as' => 'admin.users']);
 Route::get('/pages', ['uses' => 'AdminController@pages', 'as' => 'admin.pages']);
 Route::get('/categories', ['uses' => 'AdminController@categories', 'as' => 'admin.categories']);
+Route::get('/docentes', ['uses' => 'AdminController@docentes', 'as' => 'admin.docentes']);
 Route::get('/images', ['uses' => 'ImageController@images', 'as' => 'admin.images']);
 Route::get('/files', ['uses' => 'FileController@files', 'as' => 'admin.files']);
 Route::get('/ips', ['uses' => 'AdminController@ips', 'as' => 'admin.ips']);
@@ -85,6 +86,7 @@ Route::post('/tag', ['uses' => 'TagController@store', 'as' => 'tag.store']);
  */
 Route::resource('post', 'PostController', ['except' => ['show', 'index']]);
 Route::resource('category', 'CategoryController', ['except' => ['index', 'show', 'create']]);
+Route::resource('docente', 'DocenteController', ['except' => ['index', 'show', 'create']]);
 Route::resource('page', 'PageController', ['except' => ['show', 'index']]);
 
 /**

@@ -19,6 +19,7 @@
                     <li><a href="{{ route('admin.comments') }}">Revisões</a></li>
                     <li><a href="{{ route('admin.tags') }}">Etiquetas</a></li>
                     <li><a href="{{ route('admin.categories') }}">Categorias</a></li>
+                    <li><a href="{{ route('admin.docentes') }}">Docentes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check())

@@ -17,6 +17,7 @@ use App\Http\Controllers\TelegramRepository;
 use App\Http\Requests;
 use App\Ip;
 use App\Post;
+use App\Docente;
 use DB;
 use App\User;
 use Illuminate\Http\Request;
@@ -123,6 +124,12 @@ class AdminController extends Controller
     {
         $categories = $this->categoryRepository->getAll();
         return view('admin.categories', compact('categories'));
+    }
+
+    public function docentes(Request $request)
+    {
+        $docentes = Docente::all();
+        return view('admin.docentes')->with(compact('docentes'));
     }
 
     public function users(Request $request)
