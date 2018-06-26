@@ -119,10 +119,10 @@ class HomeController extends Controller
     public function docenteSingle(Request $request)
     {
         $slug = $request->slug;
-        $docentes = docentesFake();
+        $docentes = Docente::all();
 
         foreach ($docentes as $prof) {
-           if ($prof->url === $slug) {
+           if ($prof->slug === $slug) {
                $professor = $prof;
            }
         }        

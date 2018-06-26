@@ -49,7 +49,7 @@
                                     <div class="nicdark_section nicdark_height_20"></div>
                                     <p>{{ $docente->description }}</p>
                                     <div class="nicdark_section nicdark_height_20"></div>
-                                    <a class="nicdark_display_inline_block nicdark_color_white nicdark_bg_blue nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13" href="{{route('docente.single', ['slug' => $docente->url])}}">Ver Perfil</a>
+                                    <a class="nicdark_display_inline_block nicdark_color_white nicdark_bg_blue nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13" href="{{route('docente.single', ['slug' => $docente->slug])}}">Ver Perfil</a>
 
                                 </div>
 

@@ -13,7 +13,7 @@ class Docente extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['id','name','description','slug','avatar'];
+    protected $fillable = ['id','name','description','slug','avatar','web','skype','location','phone','email'];
 
     protected $dates = ['deleted_at'];
 }
