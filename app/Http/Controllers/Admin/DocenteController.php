@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Category;
-use App\Http\Repositories\CategoryRepository;
+use App\Http\Repositories\DocentesRepository;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use XblogConfig;
@@ -14,19 +14,15 @@ use App\Docente;
 
 class DocenteController extends Controller
 {
-    use UploadAvatarDocente;
 
-    const PATH_AVATAR = '/site/img/avatar';
-
-    protected $categoryRepository;
 
     /**
      * DocenteController constructor.
      * @param CategoryRepository $categoryRepository
      */
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(DocentesRepository $docentesRepository)
     {
-        $this->categoryRepository = $categoryRepository;
+        $this->docentesRepository = $docentesRepository;
     }
 
     /**
@@ -36,7 +32,7 @@ class DocenteController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('admin.docentes.create');
     }
 
     /**
@@ -49,24 +45,12 @@ class DocenteController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:docentes',
-            'description' => 'required|unique:docentes',
         ]);
-        $avatar = $request->file('avatar');
 
-        $name_avatar = $this->saveAvatarDocente($avatar,self::PATH_AVATAR);
-
-        $dados = $request->all();
-        unset($dados['_token']);
-        $dados['slug'] = str_slug($dados['name'],'-');
-        $dados['avatar'] = self::PATH_AVATAR.'/'.$name_avatar;        
-
-        if (is_null($name_avatar))
-            return back()->with('error', 'Docente ' . $request['name'] . ' não foi cadastrado');
-
-        if (Docente::create($dados))
-            return back()->with('success', 'Docente ' . $request['name'] . ' foi cadastrado com sucesso');
+        if ($this->docentesRepository->create($request))
+            return back()->with('success', 'Docente ' . $request['name'] . ' foi criada com sucesso');
         else
-            return back()->with('error', 'Docente ' . $request['name'] . ' não foi cadastrado');
+            return back()->with('error', 'Docente ' . $request['name'] . ' não foi criada');
     }
 
     /**
@@ -76,9 +60,9 @@ class DocenteController extends Controller
      * @return \Illuminate\Http\Response
      * @internal param int $id
      */
-    public function edit(Category $category)
+    public function edit(Docente $docente)
     {
-        return view('admin.category.edit', compact('category'));
+        return view('admin.docentes.edit', compact('docente'));
     }
 
     /**
@@ -89,17 +73,15 @@ class DocenteController extends Controller
      * @return mixed
      * @internal param int $id
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Docente $docente)
     {
-        $this->validate($request, [
-            'name' => 'required|unique:categories',
-        ]);
 
-        if ($this->categoryRepository->update($request, $category)) {
-            return redirect()->route('admin.categories')->with('success', 'Categorias ' . $request['name'] . ' alterada com sucesso');
+
+        if ($this->docentesRepository->update($request, $docente)) {
+            return redirect()->route('admin.docentes')->with('success', 'Docente ' . $request['name'] . ' alterado com sucesso');
         }
 
-        return back()->withInput()->withErrors('Categoria ' . $request['name'] . ' não foi alterada');
+        return back()->withInput()->withErrors('Docente ' . $request['name'] . ' não foi alterado');
     }
 
     /**
@@ -109,14 +91,12 @@ class DocenteController extends Controller
      * @return mixed
      * @internal param int $id
      */
-    public function destroy(Category $category)
+    public function destroy(Docente $docente)
     {
-        if ($category->posts()->withoutGlobalScopes()->count() > 0) {
-            return redirect()->route('admin.categories')->withErrors($category->name . ' O seguinte categoria não pode ser excluída');
-        }
-        $this->categoryRepository->clearCache();
-        if ($category->delete())
-            return back()->with('success', $category->name . ' excluido com sucesso');
-        return back()->withErrors($category->name . ' exclusão falhou');
+ 
+        $this->docentesRepository->clearCache();
+        if ($docente->delete())
+            return back()->with('success', $docente->name . ' excluido com sucesso');
+        return back()->withErrors($docente->name . ' exclusão falhou');
     }
 }
