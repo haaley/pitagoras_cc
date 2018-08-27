@@ -32,7 +32,78 @@
                                     </span>
                                 @endif
                             </div>
+                            <label for="avatar" class="col-md-4 control-label">Avatar do Docente </label>
+                            <div class="col-md-6">
+                                <input id="avatar" type="file" class="form-control" name="avatar"
+                                       value="{{ $docente->avatar }}"
+                                       autofocus>
 
+                                @if ($errors->has('avatar'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('avatar') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <label for="email" class="col-md-4 control-label">Email do Docente </label>
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="email"
+                                       value="{{ $docente->email }}"
+                                       autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>                            
+                            <label for="skype" class="col-md-4 control-label">Skype do Docente </label>
+                            <div class="col-md-6">
+                                <input id="skype" type="text" class="form-control" name="skype"
+                                       value="{{ $docente->skype }}"
+                                       autofocus>
+
+                                @if ($errors->has('skype'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('skype') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <label for="phone" class="col-md-4 control-label">Phone do Docente </label>
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control" name="phone"
+                                       value="{{ $docente->phone }}"
+                                       autofocus>
+
+                                @if ($errors->has('phone'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <label for="location" class="col-md-4 control-label">Localização do Docente </label>
+                            <div class="col-md-6">
+                                <input id="location" type="text" class="form-control" name="location"
+                                       value="{{ $docente->location }}"
+                                       autofocus>
+
+                                @if ($errors->has('location'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('location') }}</strong>
+                                    </span>
+                                @endif
+                            </div>                            
+                            <label for="web" class="col-md-4 control-label">Página Web do Docente </label>
+                            <div class="col-md-6">
+                                <input id="web" type="text" class="form-control" name="web"
+                                       value="{{ $docente->web }}"
+                                       autofocus>
+
+                                @if ($errors->has('web'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('web') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="put">
