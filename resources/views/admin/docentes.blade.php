@@ -16,7 +16,6 @@
                         <tr>
                             <th>Nome</th>
                             <th>Data</th>
-                            <th>Artigo</th>
                             <th>Operação</th>
                         </tr>
                         </thead>
@@ -25,17 +24,16 @@
                             <tr>
                                 <td>{{ $docente->name }}</td>
                                 <td>{{ $docente->created_at->format('Y-m-d') }}</td>
-                                <td>{{ $docente->posts_count }}</td>
                                 <td>
                                     <div>
-                                        <a href="{{ route('category.edit',$docente->id) }}" class="btn btn-info"
+                                        <a href="{{ route('docente.edit',$docente->id) }}" class="btn btn-info"
                                            data-toggle="tooltip" data-placement="top" title="editar">
                                             <i class="fa fa-pencil fa-fw"></i>
                                         </a>
                                         <button class="btn btn-danger swal-dialog-target"
                                                 data-toggle="tooltip" data-placement="top" title="excluir"
-                                                data-url="{{ route('category.destroy',$docente->id) }}"
-                                                data-dialog-msg="excluir{{ $docente->name }}?">
+                                                data-url="{{ route('docente.destroy',$docente->id) }}"
+                                                data-dialog-msg="excluir {{ $docente->name }}?">
                                             <i class="fa fa-trash-o fa-fw"></i>
                                         </button>
                                     </div>

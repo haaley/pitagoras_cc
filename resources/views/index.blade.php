@@ -859,8 +859,7 @@
                                              src="http://pitagoras.predeploy.site/site/img/courses/img23.jpg">
                                     </a>
                                     <div class="nicdark_bg_greydark_alpha nicdark_position_absolute nicdark_left_0 nicdark_height_100_percentage nicdark_width_100_percentage nicdark_padding_30 nicdark_box_sizing_border_box"></div>
-                                    <a class="nicdark_position_absolute nicdark_right_20 nicdark_top_20 nicdark_display_inline_block nicdark_color_white bg-primary nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13 nicdark_z_index_9"
-                                       href="#">Informativo</a>
+
 
                                 </div>
                                 <div class="nicdark_section nicdark_padding_30 nicdark_box_sizing_border_box">
@@ -942,8 +941,7 @@
 
                                 <img alt="" class="nicdark_section"
                                      src="http://pitagoras.predeploy.site/site/img/blog/img1.jpg">
-                                <a class="nicdark_position_absolute nicdark_right_20 nicdark_top_20 nicdark_display_inline_block nicdark_color_white bg-primary nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13 nicdark_z_index_9"
-                                   href="#">Informativo</a>
+
 
                                 <div class="nicdark_bg_greydark_alpha_gradient nicdark_position_absolute nicdark_left_0 nicdark_height_100_percentage nicdark_width_100_percentage nicdark_padding_30 nicdark_box_sizing_border_box">
                                     <div class="nicdark_position_absolute nicdark_bottom_30">
@@ -974,8 +972,7 @@
                                 <div class="nicdark_section nicdark_position_relative">
                                     <img alt="" class="nicdark_section"
                                          src="http://pitagoras.predeploy.site/site/img/courses/img12.jpg">
-                                    <a class="nicdark_position_absolute nicdark_right_20 nicdark_top_20 nicdark_display_inline_block nicdark_color_white bg-secondary nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13 nicdark_z_index_9"
-                                       href="#">Vestibular Já</a>
+
                                 </div>
                                 <div class="nicdark_section nicdark_padding_30 nicdark_box_sizing_border_box">
                                     <h5 class="nicdark_second_font nicdark_color_grey">06 Agosto 2017</h5>
@@ -1027,8 +1024,7 @@
 
                                 <img alt="" class="nicdark_section"
                                      src="http://pitagoras.predeploy.site/site/img/courses/img5.jpg">
-                                <a class="nicdark_position_absolute nicdark_right_20 nicdark_top_20 nicdark_display_inline_block nicdark_color_white bg-primary nicdark_first_font nicdark_padding_8 nicdark_border_radius_3 nicdark_font_size_13 nicdark_z_index_9"
-                                   href="#">Informativo</a>
+    
 
                                 <div class="nicdark_bg_greydark_alpha_gradient_3 nicdark_position_absolute nicdark_left_0 nicdark_height_100_percentage nicdark_width_100_percentage nicdark_padding_30 nicdark_box_sizing_border_box">
                                     <div class="nicdark_position_absolute nicdark_bottom_30">

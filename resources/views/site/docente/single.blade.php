@@ -1,8 +1,8 @@
 @extends('layouts.site')
 @section('title','Docentes')
-@section('sub-header-title', $professor->nome)
+@section('sub-header-title', $professor->name)
 @section('docente-sub-title','Bacharel em Ciências da Computação')
-@section('docente-img', asset($professor->img))
+@section('docente-img', asset($professor->avatar))
 @section('subhead-btn1', 'Artigos Publicados')
 @section('subhead-btn2', 'Projetos')
 
@@ -31,7 +31,7 @@
         <p class="nicdark_color_white nicdark_font_size_10_all_iphone">CITAÇÕES</p>
     </div>
 @endsection
-@section('breadcrumb-current', 'John Doe')
+@section('breadcrumb-current', $professor->name)
 @section('background-subheader-url', asset('site/img/parallax/img3.jpg'))
         @section('content')
             <div class="nicdark_container nicdark_clearfix">
@@ -49,16 +49,20 @@
                             <div class="nicdark_section nicdark_height_20"></div>
 
                             <div class="nicdark_width_50_percentage nicdark_width_100_percentage_all_iphone nicdark_float_left ">
-                                <p class="nicdark_padding_10 nicdark_padding_0_all_iphone nicdark_padding_left_0"><span class="nicdark_font_size_70 nicdark_float_left nicdark_padding_28 nicdark_line_height_30 nicdark_first_font"><strong>A</strong></span>ivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique fringilla tempus.</p>
+                                <p class="nicdark_padding_10 nicdark_padding_0_all_iphone nicdark_padding_left_0"><span class="nicdark_font_size_70 nicdark_float_left nicdark_padding_28 nicdark_line_height_30 nicdark_first_font"></span>{{html_entity_decode($professor->description)}}</p>
                             </div>
+
                             <div class="nicdark_width_50_percentage nicdark_width_100_percentage_all_iphone nicdark_float_left">
-                                <p class="nicdark_padding_10 nicdark_padding_0_all_iphone nicdark_padding_right_0">Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique fringilla tempus.</p>
+                                <p class="nicdark_padding_10 nicdark_padding_0_all_iphone nicdark_padding_right_0">
+                                    <img alt="" class="nicdark_section" src="{{asset($professor->avatar)}}"></p>
                             </div>
+                            <img alt="" class="nicdark_section" src="$docente->avatar">
 
                             <div class="nicdark_section nicdark_height_40"></div>
 
 
                             <div class="nicdark_section">
+
 
 
                                 <!--START tab-->
@@ -202,23 +206,23 @@
                                         <tbody>
                                             <tr class="nicdark_border_bottom_2_solid_grey">
                                                 <td class="nicdark_padding_20 "><img alt="" class="" width="40" src="{{asset('site/img/icons/icon-email-grey.svg')}}"></td>
-                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Email: hallo@johndoe.com</h4></td>
+                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Email: {{($professor->email)}}</h4></td>
                                             </tr>
                                             <tr class="nicdark_border_bottom_2_solid_grey">
                                                 <td class="nicdark_padding_20"><img alt="" class="" width="40" src="{{asset('site/img/icons/icon-mobile-grey.svg')}}"></td>
-                                                <td class="nicdark_padding_20"><h4 class=" nicdark_text_align_right">Phone: +00 80023457</h4></td>
+                                                <td class="nicdark_padding_20"><h4 class=" nicdark_text_align_right">Phone: {{($professor->phone)}}</h4></td>
                                             </tr>
                                             <tr class="nicdark_border_bottom_2_solid_grey">
                                                 <td class="nicdark_padding_20 "><img alt="" class="" width="40" src="{{asset('site/img/icons/icon-skype-grey.svg')}}"></td>
-                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Skype: @johndoe</h4></td>
+                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Skype: {{($professor->skype)}}</h4></td>
                                             </tr>
                                             <tr class="nicdark_border_bottom_2_solid_grey">
                                                 <td class="nicdark_padding_20 "><img alt="" class="" width="40" src="{{asset('site/img/icons/icon-link-grey.svg')}}"></td>
-                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Web: www.johndoe.com</h4></td>
+                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Web: {{($professor->web)}}</h4></td>
                                             </tr>
                                             <tr>
                                                 <td class="nicdark_padding_20 "><img alt="" class="" width="40" src="{{asset('site/img/icons/icon-pin-grey.svg')}}"></td>
-                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Location: Milan ( IT )</h4></td>
+                                                <td class="nicdark_padding_20 "><h4 class=" nicdark_text_align_right">Local: {{($professor->location)}}</h4></td>
                                             </tr>
                                         </tbody>
                                     </table>
